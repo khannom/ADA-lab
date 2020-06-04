@@ -2,6 +2,9 @@
 #include<math.h>
 using namespace std;
 
+//Nombre: Diego Armando Portocarrero Espirilla
+
+// Suma maxima del subarray orden lineal
 long long maxSubArraySum(long long a[], int size, int& p, int& q) 
 { 
     long long max_so_far = 0;
@@ -9,13 +12,14 @@ long long maxSubArraySum(long long a[], int size, int& p, int& q)
 
     for (int i = 0; i < size; i++) 
     {
-        max_ending_here = max_ending_here + a[i]; 
+        max_ending_here = max_ending_here + a[i];
+
         if (max_so_far < max_ending_here)
         {
             max_so_far = max_ending_here;
             q = i;
         }
-  
+
         if (max_ending_here < 0)
         {
             max_ending_here = 0;
@@ -25,18 +29,7 @@ long long maxSubArraySum(long long a[], int size, int& p, int& q)
     return max_so_far; 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+// Suma maxima del subarray divide y venceras
 long long maxSum(long long a[], int p, int r, int& idx1, int& idx2)
 {
     if(p == r) return (a[p]<0?0:a[p]);
@@ -65,7 +58,7 @@ long long maxSum(long long a[], int p, int r, int& idx1, int& idx2)
         suma += a[i];
         if (suma > maxDer2)
         {
-            maxIzq2 = suma;
+            maxDer2 = suma;
             idx2 = i;
         }
     }
@@ -81,23 +74,6 @@ long long maxSum(long long a[], int p, int r, int& idx1, int& idx2)
     }
     return max;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 int main()
@@ -122,6 +98,5 @@ int main()
         else
             cout<<"La mejor parte de la ruta "<<i+1<<" es entre las calles "<<idx1+1<<" y "<<idx2+2<<" max: "<<maxSubSum<<endl;
     }
-    
     return 0;
 }
