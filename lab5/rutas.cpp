@@ -10,7 +10,7 @@ long long maxSubArraySum(long long a[], int size, int& p, int& q)
     long long max_so_far = 0;
     long long max_ending_here = 0; 
 
-    for (int i = 0; i < size; i++) 
+    for (int i = 0; i < size; i++)
     {
         max_ending_here = max_ending_here + a[i];
 
